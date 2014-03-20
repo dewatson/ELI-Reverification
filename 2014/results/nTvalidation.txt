@@ -1,0 +1,91 @@
+##------ Thu Feb 27 11:27:34 2014 ------##
+
+Nitrite Validation
+
+Sample Data:
+     Sample   ID Response
+1  0004-104   25       25
+2  0005-105   25       23
+3  0006-106   25       24
+4  0007-107   25       25
+5  0008-108   25       23
+6  0009-109 2000     1934
+7  0010-110 2000     2000
+8  0011-111 2000     1970
+9  0012-112 2000     1977
+10 0013-113 2000     1948
+
+Statistics:
+    ID   mean    SD  CV
+1 2000 1965.8 25.69 1.3
+2   25   24.0  1.00 4.2
+
+High carryover data:
+     Sample   ID Response Candidate
+1  0004-104  200      205        NA
+2  0005-104  200      206     FALSE
+3  0006-104  200      205     FALSE
+4  0007-105 2000     1997        NA
+5  0008-105 2000     2015        NA
+6  0009-104  200      205      TRUE
+7  0010-105 2000     1982        NA
+8  0011-105 2000     1981        NA
+9  0012-104  200      205      TRUE
+10 0013-104  200      201     FALSE
+11 0014-104  200      202     FALSE
+12 0015-104  200      200     FALSE
+13 0016-105 2000     1970        NA
+14 0017-105 2000     1991        NA
+15 0018-104  200      204      TRUE
+16 0019-105 2000     2001        NA
+17 0020-105 2000     1993        NA
+18 0021-104  200      205      TRUE
+19 0022-105 2000     2003        NA
+20 0023-105 2000     1990        NA
+21 0024-104  200      199      TRUE
+
+Carryover (%): 0.4
+
+CV of normal decision point samples: 1.3
+
+	Welch Two Sample t-test
+
+data:  D_cc$Response and D_norm$Response
+t = -23.8564, df = 8, p-value = 5.08e-09
+alternative hypothesis: true difference in means is less than 40
+95 percent confidence interval:
+     -Inf 3.855571
+sample estimates:
+mean of x mean of y 
+    203.6     202.8 
+
+
+Permanganate cross-reactivity (%): 8.9
+
+Permanganate linear regression: 
+  (Intercept) Concentration 
+  42.20408163    0.07016327 
+
+PCC cross-reactivity (%): 49.9
+
+PCC linear regression: 
+  (Intercept) Concentration 
+  -61.0408163     0.6518367 
+
+Dichromate cross-reactivity (%): 18.7
+
+Dichromate linear regression: 
+  (Intercept) Concentration 
+  -11.9591837     0.1981633 
+
+Iodine cross-reactivity (%): 2.5
+
+Iodine linear regression: 
+  (Intercept) Concentration 
+  -22620.8333        2.8505 
+
+Hypochlorite cross-reactivity (%): 6.5
+
+Hypochlorite linear regression: 
+  (Intercept) Concentration 
+ -842.0000000     0.3386849 

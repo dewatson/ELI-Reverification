@@ -1,0 +1,17 @@
+This is 8-bit Big BibTeX version 0.99c
+Implementation:  C for Unix
+Release version: 3.71 (31 May 2005)
+
+The 8-bit codepage and sorting file: 88591lat.csf
+The top-level auxiliary file: nT.aux
+The style file: achemso.bst
+Database file #1: acs-nT.bib
+Database file #2: validation.bib
+
+Here's how much of BibTeX's memory you used:
+ Cites:                 3 out of 7500
+ Fields:               66 out of 125000
+ Hash table:        34752 out of 35000
+ Strings:             740 out of 30000
+ String pool:        6214 out of 750000
+ Wizard functions:   3088 out of 10000

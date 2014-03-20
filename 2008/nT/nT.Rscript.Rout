@@ -1,0 +1,257 @@
+
+R version 2.8.1 (2008-12-22)
+Copyright (C) 2008 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> nT <- read.table('data/nT.dat', header=TRUE)
+> attach(nT)
+> mean(nt25)
+[1] 23.2
+> sd(nt25)
+[1] 0.4472136
+> 100*sd(nt25)/mean(nt25)
+[1] 1.927645
+> mean(nt2000)
+[1] 2281.2
+> sd(nt2000)
+[1] 9.95992
+> 100*sd(nt2000)/mean(nt2000)
+[1] 0.4366088
+> permanganate <- read.table('data/permanganate.dat', header=TRUE)
+> attach(permanganate)
+> permanganate_fit <- lm(Response ~ Concentration)
+> summary(permanganate_fit)
+
+Call:
+lm(formula = Response ~ Concentration)
+
+Residuals:
+     1      2      3 
+-2.755  4.408 -1.653 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)  
+(Intercept)   42.530612   6.258389   6.796   0.0930 .
+Concentration  0.057224   0.001909  29.979   0.0212 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 5.455 on 1 degrees of freedom
+Multiple R-squared: 0.9989,	Adjusted R-squared: 0.9978 
+F-statistic: 898.8 on 1 and 1 DF,  p-value: 0.02123 
+
+> pct_permanganate_cr <- 100* (200 * permanganate_fit$coef[2]/ (200 - permanganate_fit$coef[1]))
+> round(pct_permanganate_cr,1)
+Concentration 
+          7.3 
+> postscript(file='images/permanganate.eps', paper="special", width=6.4, height=4, horizontal=FALSE, onefile=TRUE, family="Times")
+> par(mar=c(4,15,0,1),las=c(1))
+> plot(Concentration, Response, xlab="Permanganate concentration (ug/mL)", ylab="", xlim=c(0,6000), ylim=c(0,400), frame.plot=FALSE,pch=21,col="gray20",bg="gray80",axes=FALSE)
+> mtext("Nitrite test response (ug/mL)",side=2,adj=1,at=c(200),line=3)
+> axis(side=1,at=c(1000,2500,5000))
+> axis(side=2)
+> abline(permanganate_fit)
+> abline(h=c(200),lty=2)
+> dev.off()
+null device 
+          1 
+> detach(permanganate)
+> pcc <- read.table('data/pcc.dat', header=TRUE)
+> attach(pcc)
+> pcc_fit <- lm(Response ~ Concentration)
+> summary(pcc_fit)
+
+Call:
+lm(formula = Response ~ Concentration)
+
+Residuals:
+      1       2       3 
+ 1.4286 -2.2857  0.8571 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)  
+(Intercept)   -8.571429   3.245090  -2.641    0.230  
+Concentration  0.165714   0.004949  33.486    0.019 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 2.828 on 1 degrees of freedom
+Multiple R-squared: 0.9991,	Adjusted R-squared: 0.9982 
+F-statistic:  1121 on 1 and 1 DF,  p-value: 0.01901 
+
+> pct_pcc_cr <- 100* (200 * pcc_fit$coef[2]/ (200 - pcc_fit$coef[1]))
+> round(pct_pcc_cr,1)
+Concentration 
+         15.9 
+> postscript(file='images/pcc.eps', paper="special", width=4, height=4, horizontal=FALSE, onefile=TRUE, family="Times")
+> par(mar=c(4,3,0,1),las=c(1))
+> plot(Concentration, Response, xlab="PCC concentration (ug/mL)", ylab="", xlim=c(0,1200), ylim=c(0,400), frame.plot=FALSE,pch=21,col="gray20",bg="gray80",axes=FALSE)
+> axis(side=1,at=c(200,500,1000))
+> axis(side=2)
+> abline(pcc_fit)
+> abline(h=c(200),lty=2)
+> dev.off()
+null device 
+          1 
+> detach(pcc)
+> dichromate <- read.table('data/dichromate.dat', header=TRUE)
+> attach(dichromate)
+> dichromate_fit <- lm(Response ~ Concentration)
+> summary(dichromate_fit)
+
+Call:
+lm(formula = Response ~ Concentration)
+
+Residuals:
+      1       2       3 
+ 1.0204 -1.6327  0.6122 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)  
+(Intercept)   -8.122449   2.317922  -3.504   0.1770  
+Concentration  0.205510   0.003535  58.139   0.0109 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 2.02 on 1 degrees of freedom
+Multiple R-squared: 0.9997,	Adjusted R-squared: 0.9994 
+F-statistic:  3380 on 1 and 1 DF,  p-value: 0.01095 
+
+> pct_dichromate_cr <- 100* (200 * dichromate_fit$coef[2]/ (200 - dichromate_fit$coef[1]))
+> round(pct_dichromate_cr,1)
+Concentration 
+         19.7 
+> postscript(file='images/dichromate.eps', paper="special", width=4, height=4, horizontal=FALSE, onefile=TRUE, family="Times")
+> par(mar=c(4,3,0,1),las=c(1))
+> plot(Concentration, Response, xlab="Dichromate concentration (ug/mL)", ylab="", xlim=c(0,1200), ylim=c(0,400), frame.plot=FALSE,pch=21,col="gray20",bg="gray80",axes=FALSE)
+> axis(side=1,at=c(200,500,1000))
+> axis(side=2)
+> abline(dichromate_fit)
+> abline(h=c(200),lty=2)
+> dev.off()
+null device 
+          1 
+> detach(dichromate)
+> iodine <- read.table('data/iodine.dat', header=TRUE)
+> attach(iodine)
+> Concentration <- 1000 * Concentration
+> iodine_fit <- lm(Response ~ Concentration)
+> summary(iodine_fit)
+
+Call:
+lm(formula = Response ~ Concentration)
+
+Residuals:
+      1       2       3 
+-0.1667  0.3333 -0.1667 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)  
+(Intercept)   -2.483e+01  2.609e+00  -9.519   0.0666 .
+Concentration  9.500e-03  2.887e-04  32.909   0.0193 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 0.4082 on 1 degrees of freedom
+Multiple R-squared: 0.9991,	Adjusted R-squared: 0.9982 
+F-statistic:  1083 on 1 and 1 DF,  p-value: 0.01934 
+
+> pct_iodine_cr <- 100* (200 * iodine_fit$coef[2]/ (200 - iodine_fit$coef[1]))
+> round(pct_iodine_cr,1)
+Concentration 
+          0.8 
+> postscript(file='images/iodine.eps', paper="special", width=4, height=4, horizontal=FALSE, onefile=TRUE, family="Times")
+> par(mar=c(4,3,0,1),las=c(1))
+> plot(Concentration, Response, xlab="Iodine concentration (ug/mL)", ylab="", xlim=c(0,12000), ylim=c(0,400), frame.plot=FALSE,pch=21,col="gray20",bg="gray80",axes=FALSE)
+> axis(side=1)
+> axis(side=2)
+> abline(iodine_fit)
+> abline(h=c(200),lty=2)
+> dev.off()
+null device 
+          1 
+> detach(iodine)
+> rm(Concentration)
+> hypochlorite <- read.table('data/hypochlorite.dat', header=TRUE)
+> attach(hypochlorite)
+> naocl_mw <- 74.44
+> ocl_mw <- 51.45
+> Concentration <- 10000 * Concentration * ocl_mw / naocl_mw
+> Concentration
+[1]  3455.803  6911.607 13823.213
+> hypochlorite_fit <- lm(Response ~ Concentration)
+> summary(hypochlorite_fit)
+
+Call:
+lm(formula = Response ~ Concentration)
+
+Residuals:
+     1      2      3 
+-228.3  342.4 -114.1 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)
+(Intercept)   -256.00000  523.06828  -0.489    0.710
+Concentration    0.26283    0.05721   4.594    0.136
+
+Residual standard error: 427.1 on 1 degrees of freedom
+Multiple R-squared: 0.9548,	Adjusted R-squared: 0.9095 
+F-statistic: 21.11 on 1 and 1 DF,  p-value: 0.1364 
+
+> pct_hypochlorite_cr <- 100* (200 * hypochlorite_fit$coef[2]/ (200 - hypochlorite_fit$coef[1]))
+> round(pct_hypochlorite_cr,1)
+Concentration 
+         11.5 
+> postscript(file='images/hypochlorite.eps', paper="special", width=4, height=4, horizontal=FALSE, onefile=TRUE, family="Times")
+> par(mar=c(4,3,0,1),las=c(1))
+> plot(Concentration, Response, xlab="Hypochlorite concentration (ug/mL)", ylab="", xlim=c(0,14000), ylim=c(0,4000), frame.plot=FALSE,pch=21,col="gray20",bg="gray80",axes=FALSE)
+> axis(side=1)
+> axis(side=2)
+> abline(hypochlorite_fit)
+> abline(h=c(200),lty=2)
+> dev.off()
+null device 
+          1 
+> detach(hypochlorite)
+> rm(Concentration)
+> co_dat <- read.table("data/carryover.dat")
+> normal_samples <- c(co_dat[2:3,1], co_dat[10:12,1])
+> co_samples <- c(co_dat[6,1], co_dat[9,1], co_dat[15,1], co_dat[18,1], co_dat[21,1])
+> pct_carryover <- 100*(mean(co_samples) - mean(normal_samples))/mean(normal_samples)
+> pct_carryover
+[1] -0.09756098
+> 100*sd(normal_samples)/mean(normal_samples)
+[1] 0.4878049
+> t.test(co_samples, normal_samples, mu=40, alternative="less", var.equal=TRUE)
+
+	Two Sample t-test
+
+data:  co_samples and normal_samples 
+t = -33.5, df = 8, p-value = 3.441e-10
+alternative hypothesis: true difference in means is less than 40 
+95 percent confidence interval:
+     -Inf 2.031458 
+sample estimates:
+mean of x mean of y 
+    204.8     205.0 
+
+> 
+> proc.time()
+   user  system elapsed 
+  1.564   0.045   1.601 

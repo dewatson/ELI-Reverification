@@ -1,0 +1,19 @@
+Sample,ID,Concentration,Response,Analyte
+0005-105,"AA 20",20,5.9,ascorbate
+0006-106,"AA 50",50,13.1,ascorbate
+0007-107,"AA 100",100,27.3,ascorbate
+0008-105,"AA 20",20,5.9,ascorbate
+0009-106,"AA 50",50,13.4,ascorbate
+0010-107,"AA 100",100,26.7,ascorbate
+0011-105,"AA 20",20,6.1,ascorbate
+0012-106,"AA 50",50,13.1,ascorbate
+0013-107,"AA 100",100,27.3,ascorbate
+0014-108,"NIACIN 3.0",3.0,0.0,niacin
+0015-109,"NIACIN 7.5",7.5,0.0,niacin
+0016-110,"NIACIN 15.0",15,0.0,niacin
+0017-108,"NIACIN 3.0",3.0,0.0,niacin
+0018-109,"NIACIN 7.5",7.5,0.0,niacin
+0019-110,"NIACIN 15.0",15,0.0,niacin
+0020-108,"NIACIN 3.0",3.0,0.0,niacin
+0021-109,"NIACIN 7.5",7.5,0.0,niacin
+0022-110,"NIACIN 15.0",15,0.0,niacin

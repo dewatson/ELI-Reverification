@@ -1,0 +1,30 @@
+\ifx\mcitethebibliography\mciteundefinedmacro
+\PackageError{achemso.bst}{mciteplus.sty has not been loaded}
+{This bibstyle requires the use of the mciteplus package.}\fi
+\begin{mcitethebibliography}{3}
+\providecommand*{\natexlab}[1]{#1}
+\mciteSetBstSublistMode{f}
+\mciteSetBstMaxWidthForm{subitem}{(\alph{mcitesubitemcount})}
+\mciteSetBstSublistLabelBeginEnd{\mcitemaxwidthsubitemform\space}
+{\relax}{\relax}
+
+\bibitem[{R Development Core Team}(2008)]{R-Development-Core-Team:2008th}
+{R Development Core Team}, \emph{R: A Language and Environment for Statistical
+  Computing};
+\newblock R Foundation for Statistical Computing: Vienna, Austria, 2008, {ISBN}
+  3-900051-07-0\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Armbruster et~al.(1993 Oct)Armbruster, Schwarzhoff, Hubster, and
+  Liserio]{Armbruster:1993pb}
+Armbruster,~D.~A.; Schwarzhoff,~R.~H.; Hubster,~E.~C.; Liserio,~M.~K. Enzyme
+  immunoassay, kinetic microparticle immunoassay, radioimmunoassay, and
+  fluorescence polarization immunoassay compared for drugs-of-abuse screening.
+  \emph{Clin Chem} \textbf{1993 Oct}, \emph{39}, 2137--2146\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\end{mcitethebibliography}

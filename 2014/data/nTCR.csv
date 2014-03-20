@@ -1,0 +1,16 @@
+Sample,ID,Concentration,Response,Analyte
+0004-104,"KMNO4 1000",1000,99,permanganate
+0005-105,"KMNO4 2500",2500,239,permanganate
+0006-106,"KMNO4 5000",5000,385,permanganate
+0007-107,"PCC 200",200,73,pcc
+0008-108,"PCC 500",500,259,pcc
+0009-109,"PCC 1000",1000,593,pcc
+0010-110,"DICHRO 200",200,29,dichromate
+0011-111,"DICHRO 500",500,85,dichromate
+0012-112,"DICHRO 1000",1000,187,dichromate
+0013-113,"I2 8.0",8.0,389,iodine
+0014-114,"I2 9.0",9.0,2622,iodine
+0015-115,"I2 10.0",10.0,6090,iodine
+0016-116,"NAOCL 0.5",0.5,627,hypochlorite
+0017-117,"NAOCL 1.0",1.0,1051,hypochlorite
+0018-118,"NAOCL 2.0",2.0,3989,hypochlorite
